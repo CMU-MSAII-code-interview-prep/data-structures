@@ -31,6 +31,7 @@ class Queue:
             tmp_items[i] = self.items[(i + self.front) % self.cap]
         self.items = tmp_items
         self.cap *= 2
+        self.front = 0
 
     def remove(self):
         item = self.items[self.front]
@@ -49,29 +50,29 @@ class Queue:
         string += "]"
         return string
 
+if __name__ == "__main__":
+    myqueue = Queue()
 
-myqueue = Queue()
+    print(myqueue)
 
-print(myqueue)
+    myqueue.insert(1)
+    myqueue.insert(2)
+    myqueue.insert(3)
+    myqueue.insert(4)
 
-myqueue.insert(1)
-myqueue.insert(2)
-myqueue.insert(3)
-myqueue.insert(4)
+    print(myqueue)
 
-print(myqueue)
+    myqueue.remove()
+    print(myqueue)
+    myqueue.remove()
+    print(myqueue)
+    myqueue.remove()
+    print(myqueue)
 
-myqueue.remove()
-print(myqueue)
-myqueue.remove()
-print(myqueue)
-myqueue.remove()
-print(myqueue)
+    myqueue.insert(5)
+    myqueue.insert(6)
+    myqueue.insert(7)
+    myqueue.insert(8)
 
-myqueue.insert(5)
-myqueue.insert(6)
-myqueue.insert(7)
-myqueue.insert(8)
-
-print(myqueue)
+    print(myqueue)
 

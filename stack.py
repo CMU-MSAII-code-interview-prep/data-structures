@@ -1,3 +1,4 @@
+
 class Stack:
 
     def __init__(self):
@@ -34,22 +35,22 @@ class Stack:
         item = self.items[self.size]
         return item
 
+if __name__ == "__main__":
+    mystack = Stack()
 
-mystack = Stack()
+    mystack.push(1)
+    mystack.push(2)
+    mystack.push(3)
+    mystack.push(4)
+    mystack.push(5)
 
-mystack.push(1)
-mystack.push(2)
-mystack.push(3)
-mystack.push(4)
-mystack.push(5)
-
-val = mystack.pop()
-print(val)
-val = mystack.pop()
-print(val)
-val = mystack.pop()
-print(val)
-val = mystack.pop()
-print(val)
-val = mystack.pop()
-print(val)
+    val = mystack.pop()
+    print(val)
+    val = mystack.pop()
+    print(val)
+    val = mystack.pop()
+    print(val)
+    val = mystack.pop()
+    print(val)
+    val = mystack.pop()
+    print(val)
