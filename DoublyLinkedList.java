@@ -32,7 +32,7 @@ class DoublyLinkedList {
         if(size == 0) throw new RuntimeException("Can not removeFront from empty doubly linked list");
         Node front = head;
         head = front.next;
-        if(front.next != null) front.next.prev = front.prev;
+        if(front.next != null) front.next.prev = null;
         else tail = null;
         size--;
         return front.data;
@@ -49,11 +49,30 @@ class DoublyLinkedList {
     }
 
     public String removeBack(){
-        throw new UnsupportedOperationException("Not implemented");
+        if(size == 0) throw new RuntimeException("Can not removeFront from empty doubly linked list");
+        Node back = tail;
+        tail = back.prev;
+        if(back.prev == null) head = null;
+        else back.prev.next = null;
+        size--;
+        return back.data;
     }
 
     public String remove(String key){
-        throw new UnsupportedOperationException("Not implemented");
+        if(size == 0) throw new RuntimeException("Can not removeFront from empty doubly linked list");
+        else if(key == head.data) return removeFront();
+        else if(key == tail.data) return removeBack();
+
+        Node curr = head;
+
+        while(curr != null && curr.data != key) curr = curr.next;
+
+        if(curr == null) throw new Error("Item not found");
+
+        curr.prev.next = curr.next;
+        curr.next.prev = curr.prev;
+
+        return curr.data;
     }
     
     public String toString(){
@@ -72,33 +91,35 @@ class DoublyLinkedList {
         doubly.addFront("a");
         doubly.addFront("b");
         doubly.addFront("c");
-
-        doubly.addBack("x");
+        System.out.println(doubly);
+        doubly.removeFront();
+        System.out.println(doubly);
+        doubly.removeFront();
         doubly.addBack("y");
-        doubly.addBack("z");
         System.out.println(doubly);
+        doubly.removeBack();
+        System.out.println(doubly);
+        doubly.addFront("b");
+        System.out.println(doubly);
+        doubly.removeBack();
+        doubly.addBack("y1");
+        doubly.addBack("y2");
+        doubly.addBack("y3");
+        System.out.println(doubly);
+        doubly.removeBack();
         doubly.removeFront();
-        System.out.println(doubly);
         doubly.removeFront();
-        System.out.println(doubly);
         doubly.removeFront();
-        System.out.println(doubly);
-        doubly.removeFront();
-        System.out.println(doubly);
-        doubly.removeFront();
-        System.out.println(doubly);
-        doubly.removeFront();
-        System.out.println(doubly);
-        
+        doubly.addFront("c");
+        doubly.addBack("y2");
         doubly.addFront("a");
         doubly.addFront("b");
         doubly.addFront("c");
+        doubly.addFront("d");
         System.out.println(doubly);
-        doubly.removeFront();
+        doubly.remove("c");
         System.out.println(doubly);
-        doubly.removeFront();
-        System.out.println(doubly);
-        doubly.removeFront();
+        doubly.remove("c");
         System.out.println(doubly);
     }
 
