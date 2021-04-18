@@ -54,3 +54,4 @@ if __name__ == "__main__":
     print(val)
     val = mystack.pop()
     print(val)
+    print(int(99).__hash__())

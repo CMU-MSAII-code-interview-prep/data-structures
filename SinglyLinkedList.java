@@ -5,7 +5,6 @@ class SinglyLinkedList<T> {
     private Node head;
     private int  size;
 
-
     public SinglyLinkedList(){
         size = 0;
         head = null;
@@ -53,7 +52,7 @@ class SinglyLinkedList<T> {
         StringBuilder sb = new StringBuilder();
         sb.append("[");
         Node curr = head;
-        while(curr != null){
+        while (curr != null) {
             sb.append(curr.data);
             sb.append(",");
             curr = curr.next;
@@ -72,8 +71,6 @@ class SinglyLinkedList<T> {
         }
     }
 
-
-
     public static void main(String args[]){
         SinglyLinkedList<String> linky = new SinglyLinkedList<String>();
 
@@ -82,7 +79,6 @@ class SinglyLinkedList<T> {
         linky.add("Steve");
 
         System.out.println(linky);
-
         
         linky.remove("Bob");
         System.out.println(linky);

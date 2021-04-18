@@ -18,9 +18,7 @@ class DoublyLinkedList {
 
     public void addFront(String key){
         Node curr = new Node(key);
-        if(size != 0) {
-            head.prev = curr;
-        }
+        if(size != 0)   head.prev = curr;
         else tail = curr;
         curr.next = head;
         curr.prev = null;
