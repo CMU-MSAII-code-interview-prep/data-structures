@@ -2,6 +2,15 @@ package LinkedLists;
 
 class SinglyLinkedList<T> {
 
+    private class Node{
+        T data;
+        Node   next;
+
+        public Node(T value){
+            data = value;
+        }
+    }
+
     private Node head;
     private int  size;
 
@@ -60,15 +69,6 @@ class SinglyLinkedList<T> {
         sb.append("]");
         return sb.toString();
 
-    }
-
-    private class Node{
-        T data;
-        Node   next;
-
-        public Node(T value){
-            data = value;
-        }
     }
 
     public static void main(String args[]){

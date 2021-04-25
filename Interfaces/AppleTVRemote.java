@@ -1,24 +1,19 @@
 package Interfaces;
 
-public class AppleTVRemote implements RemoteController {
+public class AppleTVRemote implements IRemote {
 
 
-    public void on() {
-        System.out.println("Turning Apple TV on");  
+    public float batteryLevel() {
+        return 55;
+    }
+
+    public void turnOn() {
+        System.out.println("Turning Apple TV on");
     }
 
 
-    public void off() {
-        System.out.println("Turning Apple TV off");  
-    }
-
-    
-    public void volumeUp() {
-        System.out.println("Turning Apple TV volume up");  
-    }
-
-    public void volumeDown() {
-        System.out.println("Turning Apple TV volume down");
+    public void turnOff() {
+        System.out.println("Turning Apple TV off");
     }
     
 }

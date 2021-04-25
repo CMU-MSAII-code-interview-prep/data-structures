@@ -1,110 +1,101 @@
-public class BST<K extends Comparable<K>, V> {
+package Searching;
 
-    private int size;
-    private Node root;
-    
+import Interfaces.Date;
+
+public class BST {
+
+    /**
+     * Private class which
+     * represents a node in the binary tree
+     */
     private class Node {
-        public Node left;
-        public Node right;
-        public V value;
-        public final K key;
-        public int height;
+        // the pointers to right and left children
+        Node left;
+        Node right;
 
-        public Node(K k, V v) {
-            key = k;
-            value = v;
-            left = null;
-            right = null;
-            height = 0;
+        // key and value of the node
+        Comparable key;
+        int val;
+
+        /**
+         * Constructor for the Node class
+         * it accepts a Comparable key
+         * and an integer value
+         */
+        public Node(Comparable key, int val) {
+            this.key = key;
+            this.val = val;
+            this.left = null;
+            this.right = null;
         }
     }
     
+    private Node root;
+    private int  size;
+
     public BST() {
         root = null;
         size = 0;
     }
 
-    public V get(K key) 
-    { return get(key, root); }
-
-    private V get(K key, Node node) {
-        if (node == null)
-            return null;
-
-        int cmp = key.compareTo(node.key);
-        if (cmp < 0)      return get(key, node.left);
-        else if (cmp > 0) return get(key, node.right);
-        else              return node.value;
+    public void put(Comparable key, int value) {
+        root = put(key, value, root);
     }
-
-    public void put(K key, V val) 
-    { root = put(key, val, root); }
-
-    public Node put(K key, V val, Node node) {
-        if (node == null) return new Node(key, val);
+    
+    private Node put(Comparable key, int value, Node node) {
+        if (node == null)
+            return new Node(key, value);
+        
         int cmp = key.compareTo(node.key);
-        if      (cmp < 0) node.right  = put(key, val, node.right);
-        else if (cmp > 0) node.left   = put(key, val, node.left);
-        else              node.value  = val;
-        node.height = size(node.left) + size(node.right) + 1;
+
+        if(cmp > 0)
+            node.right = put(key, value, node.right);
+        else if (cmp < 0)
+            node.left  = put(key, value, node.left);
+        else
+            node.val = value;
+
         return node;
     }
 
-    private int size(Node node) {
+    public Integer get(Comparable key) {
+        return get(key, root);
+    }
+    
+    private Integer get(Comparable key, Node node) {
         if (node == null)
-            return 0;
-        return node.height;
+            return null;
+        
+        int cmp = key.compareTo(node.key);
+
+        if      (cmp > 0) return get(key, node.right);
+        else if (cmp < 0) return get(key, node.left);
+        else              return node.val;
     }
 
-    public int size() {
-        return size;
+
+    public static void main(String[] args) {
+        BST myTree = new BST();
+
+        Date d0 = new Date(2009, 5, 10);
+        Date d1 = new Date(2015, 2, 10);
+        Date d2 = new Date(2012, 9, 10);
+        Date d3 = new Date(2010, 3, 10);
+        Date d4 = new Date(2016, 9, 10);
+        Date d5 = new Date(2013, 12, 10);
+        Date d6 = new Date(2014, 11, 10);
+        Date d7 = new Date(2011, 1, 10);
+
+        myTree.put(d0, 144);
+        myTree.put(d1, 24);
+        myTree.put(d2, 251);
+        myTree.put(d3, 233);
+        myTree.put(d4, 151);
+        myTree.put(d5, 2);
+        myTree.put(d6, -3);
+        myTree.put(d7, 852);
+
+        System.out.println(myTree.get(new Date(2013, 12, 10)));
     }
 
-    public boolean isEmpty() {
-        return size() == 0;
-    }
-
-    public int rank(K key) {
-        return -1;
-    }
-
-    public int rank(K key, Node x) {
-        return -1;
-    }
-
-    public int size(K lo, K hi) {
-        return -1;
-    }
-    
-    public K min() {
-        return null;
-    }
-
-    private Node min(Node node) {
-        return null;
-    }
-
-    public K max() {
-        return null;
-    }
-
-    private Node max(Node node) {
-        return null;
-    }
-
-    public void deleteMin() {
-        root = deleteMin(root);
-    }
-
-    private Node deleteMin(Node x) {
-        return null;
-    }
-
-    public void delete(K key) {
-
-    }
-    
-    private Node delete(Node x, K key) {
-        return null;
-    }
 }

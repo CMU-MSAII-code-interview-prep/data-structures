@@ -1,3 +1,5 @@
+package Searching;
+
 public class HashMapLinearProbing<Key, Value> {
     private int N;
     private int M = 16;

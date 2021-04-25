@@ -1,16 +1,18 @@
+package Searching;
+
 import java.util.Random;
 
 public class HashMapSeperateChaining<Key, Val> {
     private int N;
     private int M;
-    private SequentalSearchST<Key, Val>[] arr;
+    private SequentialSearchST<Key, Val>[] arr;
 
     public HashMapSeperateChaining(int M) {
         this.M = M;
-        SequentalSearchST<Key, Val> []tmp = new SequentalSearchST[M];
+        SequentialSearchST<Key, Val>[]tmp = new SequentialSearchST[M];
         arr = tmp;
         for (int i = 0; i < M; i++)
-            arr[i] = new SequentalSearchST<Key,Val>();
+            arr[i] = new SequentialSearchST<Key,Val>();
     }
 
     public boolean empty(){

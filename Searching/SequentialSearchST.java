@@ -1,7 +1,7 @@
 package Searching;
 
 
-class SequentalSearchST<K, V> {
+class SequentialSearchST<K, V> {
 
     private Node first;
 
