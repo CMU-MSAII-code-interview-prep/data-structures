@@ -1,4 +1,4 @@
-package InterfaceExamples;
+package Interfaces;
 
 public class TVRemote implements RemoteController {
 

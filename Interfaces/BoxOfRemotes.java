@@ -1,4 +1,4 @@
-package InterfaceExamples;
+package Interfaces;
 import java.util.Stack;
 
 public class BoxOfRemotes {
