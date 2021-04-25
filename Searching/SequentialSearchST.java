@@ -1,3 +1,4 @@
+package Searching;
 
 
 class SequentalSearchST<K, V> {

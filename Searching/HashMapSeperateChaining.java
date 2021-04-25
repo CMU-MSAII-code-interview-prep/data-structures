@@ -7,9 +7,10 @@ public class HashMapSeperateChaining<Key, Val> {
 
     public HashMapSeperateChaining(int M) {
         this.M = M;
-        arr = new SequentalSearchST[M];
+        SequentalSearchST<Key, Val> []tmp = new SequentalSearchST[M];
+        arr = tmp;
         for (int i = 0; i < M; i++)
-            arr[i] = new SequentalSearchST();
+            arr[i] = new SequentalSearchST<Key,Val>();
     }
 
     public boolean empty(){

@@ -1,13 +1,10 @@
-def fibonacci(n):
+def fib(n):
     pass
-
-
-def pow_head(bm e):
+def pow_head(b, e):
     pass
 
 def pow_tail(b, e):
     pass
-
 
 def tribonacci(n):
     pass

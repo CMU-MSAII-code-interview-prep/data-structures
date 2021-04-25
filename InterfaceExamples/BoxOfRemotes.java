@@ -18,18 +18,19 @@ public class BoxOfRemotes {
             remote.on();
     }
     
-    public static void main(String args[]) {
-        TVRemote r1 = new TVRemote();
-        AppleTVRemote r2 = new AppleTVRemote();
-        TVRemote r3 = new TVRemote();
-        AppleTVRemote r4 = new AppleTVRemote();
+    // public static void main(String args[]) {
+    //     TVRemote r1 = new TVRemote();
+    //     AppleTVRemote r2 = new AppleTVRemote();
+    //     TVRemote r3 = new TVRemote();
+    //     AppleTVRemote r4 = new AppleTVRemote();
 
-        BoxOfRemotes box = new BoxOfRemotes();
-        box.addRemote(r1);
-        box.addRemote(r4);
-        box.addRemote(r2);
-        box.addRemote(r3);
+    //     BoxOfRemotes box = new BoxOfRemotes();
+        
+    //     box.addRemote(r1);
+    //     box.addRemote(r4);
+    //     box.addRemote(r2);
+    //     box.addRemote(r3);
 
-        box.turnAllOn();
-    }
+    //     box.turnAllOn();
+    // }
 }

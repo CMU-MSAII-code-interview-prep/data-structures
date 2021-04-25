@@ -29,7 +29,7 @@ public class MSAIIDate implements Comparable<MSAIIDate> {
     }
 
     /**
-     * Examples of how these conparables can be userful
+     * Examples of how these comparables can be userful
      */
 
     public static void main(String[] args) {
@@ -50,9 +50,9 @@ public class MSAIIDate implements Comparable<MSAIIDate> {
 
         Arrays.sort(dates);
 
-        System.out.println("\nPRINTING SORTED DATES");
+        System.out.println("\n\nPRINTING SORTED DATES");
         for (MSAIIDate d : dates)
-        System.out.print(d + " ");
+            System.out.print(d + " ");
         
          
      }
